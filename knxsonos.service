@@ -1,0 +1,14 @@
+[Unit]
+Description=KNXSonos, bridging between KNX and Sonos
+After=syslog.target knxdataif.service
+BindsTo=knxdataif.service
+
+[Service]
+User=trond
+Environment="PYTHONIOENCODING=utf-8"
+WorkingDirectory=/home/trond/Projects/knxsonos
+ExecStart=/usr/bin/python knxsonos.py
+Restart=always
+
+[Install]
+WantedBy=knxdataif.service

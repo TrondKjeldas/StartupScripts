@@ -1,0 +1,2 @@
+SUBSYSTEM=="usb", ACTION=="add", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="135e", ATTRS{idProduct}=="0022", SYMLINK="knxdataif", OWNER="root", GROUP="plugdev", TAG+="systemd", ENV{SYSTEMD_WANTS}="knxdataif.service"
+SUBSYSTEM=="usb", ACTION=="remove", ENV{DEVTYPE}=="usb_device", ENV{ID_VENDOR_ID}="135e", ENV{ID_MODEL_ID}="0022", TAG+="systemd", ENV{SYSTEMD_WANTS}="eibd.service"

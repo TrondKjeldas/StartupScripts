@@ -1,0 +1,14 @@
+ [Unit]
+Description=EIBD, daemon to interface KNX bus
+BindsTo=dev-knxdataif.device
+After=syslog.target
+Wants=knxsonos.service
+
+
+[Service]
+User=eibd
+ExecStart=/usr/bin/eibd -D -T -S -i usb:
+ExecStop=/usr/bin/killall eibd
+
+[Install]
+WantedBy=multi-user.target
