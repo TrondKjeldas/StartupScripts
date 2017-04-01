@@ -6,8 +6,8 @@ BindsTo=knxdataif.service
 [Service]
 User=trond
 Environment="PYTHONIOENCODING=utf-8"
-WorkingDirectory=/home/trond/Projects/knxmonitor
-ExecStart=/usr/bin/python knxmonitor.py ip:localhost
+WorkingDirectory=/home/trond/knxlogs
+ExecStart=/usr/bin/python ../knxmonitor/knxmonitor.py ip:localhost
 Restart=always
 
 [Install]
